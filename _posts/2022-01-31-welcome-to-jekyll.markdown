@@ -4,7 +4,11 @@ title:  "Welcome to Jekyll!"
 date:   2022-01-31 18:48:04 -0300
 categories: jekyll category-two
 author: "Delta"
+image: /assets/img/placeholder-dungeon.png
 ---
+
+![quest_placeholder]({{ page.image | relative_url }})
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 Jekyll requires blog post files to be named according to the following format:
