@@ -35,13 +35,10 @@ plugins:
   - jekyll-feed
 
 defaults:
-  -
-    scope:
-      path: ""
-      type: "post"
+  - scope:
+      path: "assets/img"
     values:
-        layout: "post"
-        title: "My title"
+      image: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
