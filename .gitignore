@@ -1,13 +1,8 @@
-# Jekyll
-_site/
-*-cache/
+_site
+.DS_Store
+.jekyll-cache
 .jekyll-metadata
-
-# Ruby
-.bundle/
-.ruby-version
-*.gem
-Gemfile.lock
-
-# JavaScript
+assets/css
 node_modules
+.bundle/
+vendor/
