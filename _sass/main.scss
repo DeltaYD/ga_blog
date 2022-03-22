@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+// Import fonts.
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+.montserrat {
+font-family: 'Montserrat', sans-serif;
+}
+
+
+
+// Define defaults for each variable.
+
+$base-font-family: montserrat, "Segoe UI", Helvetica, Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-size: 15px !default;
+$base-font-weight: 400 !default;
+$small-font-size: $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$orange-color: #f7ba4e;
+$green-color: #4dcd98;
+$white-color: #ffffff;
+$grey-color: #343438;
+
+$table-text-align: left !default;
+
+
+
+// Width of the content area
+
+$spacing-unit: 30px !default;
+
+$content-width: 800px !default;
+
+$on-palm: 600px !default;
+$on-laptop: 800px !default;
+
+
+
+// Define media queries.
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+
+
+// Import partials.
+@import
+  "theme/base",
+  "theme/layout",
+  "theme/syntax-highlighting"
+;
