@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+{% if page.title %}
+	<title>{{ page.title }} · {{ site.title }}</title>
+{% else %}
+	<title>{{ site.title }}</title>
+{% endif %}
+
+<!-- Add favicon -->
+<!-- <link rel="icon" href="{{ "/assets/favicon.png" | prepend: site.baseurl | prepend: site.url }}"> -->
+<link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+
+<meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+<meta property="og:title" content="{{ site.title }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="pt_BR">
+<!-- <meta name="description" content="{{ site.description }}"> -->
+<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<!-- <meta property="og:description" content="{{ site.description }}"> -->
+<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+<script type="application/ld+json">
+{"description":"{{ site.description }}","headline":"{{ site.title }}","url":"{{ page.url | prepend: site.baseurl | prepend: site.url }}","@type":"WebSite","name":"{{ site.title }}","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css"><link type="application/atom+xml" rel="alternate" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}/feed.xml" title="{{ site.title }}">
+
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/core.css">
