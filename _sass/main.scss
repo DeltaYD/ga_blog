@@ -4,36 +4,49 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 .montserrat {
-font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
 
-// Define defaults for each variable.
+// Define default fonts.
 
 $base-font-family: montserrat, "Segoe UI", Helvetica, Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $base-font-size: 15px !default;
 $base-font-weight: 400 !default;
 $small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
+$homepage-font-size: $base-font-size * 3 !default;
+
+
+// Define default colors.
 
 $orange-color: #f7ba4e;
 $green-color: #4dcd98;
 $white-color: #ffffff;
 $grey-color: #343438;
 
+$orange-color-a7: rgba($orange-color, .7);
+$green-color-a7: rgba($green-color, .7);
+$white-color-a7: rgba($white-color, .7);
+$grey-color-a7: rgba($grey-color, .7);
+
+
+
+// Define default of tables.
+
 $table-text-align: left !default;
 
 
 
-// Width of the content area
+// Define the width of the content area.
 
 $spacing-unit: 30px !default;
 
-$content-width: 800px !default;
+$content-width: 1200px !default;
 
 $on-palm: 600px !default;
-$on-laptop: 800px !default;
+$on-laptop: 1200px !default;
 
 
 
