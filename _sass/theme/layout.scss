@@ -124,6 +124,8 @@
 
 .footer-text {
   color: $white-color;
+  flex: 1;
+  display: flex;
   a {
     &,
     &:visited,
@@ -149,9 +151,6 @@
   float: left;
   margin-bottom: $spacing-unit / 2;
   padding-left: $spacing-unit / 2;
-  .host-text {
-    float: right;
-  }
 }
 
 .footer-col-1 {
@@ -188,6 +187,14 @@
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
     width:         calc(100% - (#{$spacing-unit} / 2));
   }
+}
+
+.host-text {
+  float: right;
+  flex: 1;
+  display: flex;
+  padding-top: 1.8%;
+  padding-bottom: 1.8%;
 }
 
 
