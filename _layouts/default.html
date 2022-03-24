@@ -16,18 +16,17 @@ published: true
 
     {% if page.title %}
     <main class="page-content" aria-label="Content">
-        <div class="wrapper">
-            {{ content }}
-        </div>
+      <div class="wrapper">
+        {{ content }}
+      </div>
     </main>
     {% else %}
     <main class="home-content" aria-label="Content">
-        <div class="home-wrapper">
-            {{ content }}
-        </div>
+      <div class="home-wrapper">
+        {{ content }}
+      </div>
     </main>
     {% endif %}
-
 
 		{% include footer.html %}
 

@@ -2,31 +2,35 @@
  * Homepage.
  */
 .home-content {
-  background-image: url("https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
-  background-repeat: no-repeat;
-  background-size: cover;
   padding: 0;
   flex: 1;
-  display: flex;
 }
 
 .home-wrapper {
-  max-width: -webkit-calc(#{100%} - (#{$spacing-unit} * 2));
-  max-width:         calc(#{100%} - (#{$spacing-unit} * 2));
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
+  max-width: -webkit-calc(#{100%});
+  max-width:         calc(#{100%});
 
   @extend %clearfix;
 
   @include media-query($on-laptop) {
-    max-width: -webkit-calc(#{100%} - (#{$spacing-unit}));
-    max-width:         calc(#{100%} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+    max-width: -webkit-calc(#{100%});
+    max-width:         calc(#{100%});
   }
 
+  padding: 0;
+}
+
+.background {
+  background-image: url("https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  flex: 1;
+  display: flex;
+}
+
+.grey-filter {
   background-color: $grey-color-a8;
   flex: 1;
   display: flex;
@@ -34,7 +38,7 @@
   align-items: center;
 }
 
-span {
+.welcome {
   color: $orange-color;
   font-size: $homepage-font-size;
   font-weight: bold;
