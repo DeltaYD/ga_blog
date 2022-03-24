@@ -4,6 +4,7 @@
 .home-content {
   padding: 0;
   flex: 1;
+  background-color: $green-color-a8;
 }
 
 .home-wrapper {
@@ -18,6 +19,10 @@
   }
 
   padding: 0;
+
+  .wrapper {
+    background-color: $grey-color;
+  }
 }
 
 .background {
@@ -25,7 +30,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 400px;
+  height: $homepage-background;
   flex: 1;
   display: flex;
 }
@@ -43,4 +48,43 @@
   font-size: $homepage-font-size;
   font-weight: bold;
   text-align: center;
+}
+
+.about {
+  padding: $spacing-unit;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.news {
+  padding: $spacing-unit;
+}
+
+.support {
+  padding: $spacing-unit;
+  .instituitions {
+    text-align: justify;
+    font-size: 0;
+    line-height: 0;
+
+    .institution {
+      width: 250px;
+      display: inline-block;
+    }
+
+    #institution1 {
+      padding-right: $spacing-unit;
+      padding-left: $spacing-unit * 8;
+    }
+
+    #institution2 {
+      padding-right: $spacing-unit * 8;
+      padding-left: $spacing-unit;
+    }
+
+    .stretch {
+      width: 100%;
+      display: inline-block;
+    }
+  }
 }
