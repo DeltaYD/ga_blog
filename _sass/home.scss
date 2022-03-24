@@ -72,12 +72,12 @@
       display: inline-block;
     }
 
-    #institution1 {
+    .institution-left {
       padding-right: $spacing-unit;
       padding-left: $spacing-unit * 8;
     }
 
-    #institution2 {
+    .institution-right {
       padding-right: $spacing-unit * 8;
       padding-left: $spacing-unit;
     }
