@@ -19,6 +19,7 @@
   }
 
   padding: 0;
+          flex-grow : 1;
 
   .wrapper {
     background-color: $grey-color;
@@ -73,6 +74,14 @@
 // News section.
 
 .news {
+  .news-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+      margin-bottom: $spacing-unit;
+    }
+  }
 }
 
 

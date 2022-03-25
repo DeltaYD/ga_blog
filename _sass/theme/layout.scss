@@ -203,13 +203,38 @@
  * Page content.
  */
 .page-content {
-  background-color: $green-color;
-  padding: $spacing-unit 0;
   flex: 1;
+  display: flex;
+  padding: 0;
+  background-color: $green-color;
 }
 
 .page-heading {
   @include relative-font-size(2);
+}
+
+.post-wrapper {
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+  margin-right: auto;
+  margin-left: auto;
+  @extend %clearfix;
+
+  flex: 1;
+  padding: $spacing-unit;
+  padding-top: $spacing-unit / 2;
+  background-color: $grey-color;
+
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
+.home {
+  padding: $spacing-unit;
 }
 
 .post-list-heading {
