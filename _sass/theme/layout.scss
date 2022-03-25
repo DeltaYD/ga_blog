@@ -277,16 +277,21 @@
 
 
 /**
- * Posts.
+ * General posts.
  */
+.post {
+  padding: $spacing-unit;
+}
+
 .post-header {
-  margin-bottom: $spacing-unit;
+  margin-bottom: 0;
 }
 
 .post-title {
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1;
+  margin-bottom: $spacing-unit / 2;
 
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
@@ -294,8 +299,6 @@
 }
 
 .post-content {
-  margin-bottom: $spacing-unit;
-
   h2 {
     @include relative-font-size(2);
 
@@ -319,4 +322,54 @@
       @include relative-font-size(1.125);
     }
   }
+}
+
+
+
+/**
+ * Project posts.
+ */
+.post-section {
+  padding: $spacing-unit / 2;
+    text-align: justify;
+}
+
+.project-section {
+  display: flex;
+}
+
+.media-section {
+  width: $media-size;
+  object-fit: contain;
+}
+
+.abstract-section {
+  padding-left: $spacing-unit;
+}
+
+.post-section-title {
+  line-height: 1;
+  margin-bottom: $spacing-unit / 2;
+}
+
+.post-section-content {
+  display: flex;
+}
+
+.team {
+  flex-wrap: wrap;
+}
+
+.author {
+  padding: $spacing-unit;
+  padding-bottom: 0;
+}
+
+.author-name {
+  text-align: center;
+}
+
+.author-picture {
+  max-width: $author-picture;
+  border-radius: 50%;
 }
