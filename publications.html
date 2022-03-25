@@ -10,39 +10,59 @@ title: Publicações
 
 
   {% if site.paginate %}
-    {% assign posts = paginator.publications %}
+    {% assign publication = ((paginator.publications | sort: date) | reverse) %}
   {% else %}
-    {% assign posts = site.publications %}
+    {% assign publication = ((site.publications | sort: date) | reverse) %}
   {% endif %}
 
 
-  {%- if posts.size > 0 -%}
+  {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}
+
+
+  {%- if publication.size > 0 -%}
+
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-      <li>
-        <a href="{{ post.link }}" _target="blank">
-            <div>
-                <span class="post-meta">{{ post.date | date: date_format }} • {{ post.author }}</span>
-                <h3>
-                {{ post.title | escape }}
-                </h3>
 
-                {%- if site.show_excerpts -%}
-                {{ post.excerpt }}
-                {%- endif -%}
+    {%- for publication in publication -%}
 
-                {% if post.description != null %}
-                {{ post.description }}
-                {% endif %}
-            </div>
-        </a>
-      </li>
-      {%- endfor -%}
-    </ul>
+      {% unless publication.next %}
+        <h3 class="year-separator">{{ publication.date | date: '%Y' }}</h3>
+      {% else %}
+        {% capture year %}{{ publication.date | date: '%Y' }}{% endcapture %}
+        {% capture nyear %}{{ publication.next.date | date: '%Y' }}{% endcapture %}
+        {% if year != nyear %}
+          <h3 class="year-separator">{{ publication.date | date: '%Y' }}</h3>
+        {% endif %}
+      {% endunless %}
+
+      <ul class="post-list">
+        <li>
+          <div>
+            <span class="publication-meta">{{ publication.date | date: date_format }} • {{ publication.author }}</span>
+            <h3>
+              {{ publication.title | escape }}
+            </h3>
+
+            <a class="show-abstract">Abstract</a> •
+            {%- if publication.link != null -%}
+              &nbsp;<a href="{{ publication.link }}" target="_blank">Full Paper</a> •
+            {% endif %}
+            {%- if publication.pdf_link != null -%}
+              &nbsp;<a href="{{ publication.pdf_link }}" target="_blank">PDF</a> •
+            {% endif %}
+            <a href="{{ publication.link }}" target="_blank">BibTeX</a>
+
+            {% if publication.abstract != null %}
+              <div class="hidden-abstract" tabindex="1">
+                {{ publication.abstract }}
+              </div>
+            {% endif %}
+          </div>
+        </li>
+      </ul>
+    {%- endfor -%}
 
     {% if site.paginate %}
       <div class="pager">

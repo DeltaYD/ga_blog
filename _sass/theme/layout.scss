@@ -386,3 +386,39 @@
   max-width: $author-picture;
   border-radius: 50%;
 }
+
+
+
+/**
+ * Publications.
+ */
+
+.publication-list {
+ margin-left: 0;
+ list-style: none;
+ display: flex;
+
+ > li {
+   margin-bottom: $spacing-unit;
+ }
+}
+
+.publication-meta {
+  padding-top: $spacing-unit / 5;
+  padding-bottom: $spacing-unit / 5;
+  font-size: $base-font-size;
+  color: $grey-color-light;
+}
+
+.show-abstract {
+  outline: none;
+  cursor: pointer;
+}
+
+.hidden-abstract {
+  display: none;
+}
+
+.show-abstract:focus + .hidden-abstract {
+  display: flex;
+}
