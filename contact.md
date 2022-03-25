@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contato
-permalink: /contato/
+permalink: /contact/
 ---
 
 <h1>Cláudio Fabiano Motta Toledo</h1>
