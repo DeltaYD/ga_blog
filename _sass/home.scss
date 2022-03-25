@@ -50,18 +50,35 @@
   text-align: center;
 }
 
-.about {
+
+// General.
+
+.home-title {
+  color: $orange-color;
+}
+
+.home-section {
   padding: $spacing-unit;
+}
+
+
+// About section.
+
+.about {
   text-align: justify;
   text-justify: inter-word;
 }
 
+
+// News section.
+
 .news {
-  padding: $spacing-unit;
 }
 
+
+// Suppot section.
+
 .support {
-  padding: $spacing-unit;
   .instituitions {
     text-align: justify;
     font-size: 0;
@@ -75,11 +92,13 @@
     .institution-left {
       padding-right: $spacing-unit;
       padding-left: $spacing-unit * 8;
+      padding-bottom: $spacing-unit;
     }
 
     .institution-right {
       padding-right: $spacing-unit * 8;
       padding-left: $spacing-unit;
+      padding-bottom: $spacing-unit;
     }
 
     .stretch {

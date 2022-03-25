@@ -3,33 +3,75 @@ layout: default
 ---
 
 <div class="background">
+
   <div class="grey-filter">
     <span class="welcome">Um grupo dedicado à pesquisa em Jogos Digitais</span>
   </div>
+
   <div class="image-slider">
     <!-- TODO: fazer slider -->
   </div>
+
 </div>
+
+
 
 <div class="wrapper">
 
-  <div class="about">
-    <h1>Sobre nosso Grupo</h1>
+  <div class="home-section about">
+
+    <h1 class="home-title">Sobre nosso Grupo</h1>
+
     <h3>O Grupo de Pesquisa em Jogos do <a href="https://www.icmc.usp.br/" target="_blank">ICMC</a> é uma <a class="page-link" href="{{ site.baseurl }}/perfis/">equipe</a> de pesquisadores e alunos de iniciação científica interessados em desenvolvimento de soluções para jogos ou que utilizam jogos. Assim, aplicamos e criamos diferentes técnicas de inteliência artificial e mecânicas de jogos em nossos <a class="page-link" href="{{ site.baseurl }}/projetos/">projetos</a>. Os quais são focados principalmente em Geração Procedural de Conteúdo e Jogos Sérios voltados à Educação. Vários de nossos projetos foram <a class="page-link" href="{{ site.baseurl }}/publicacoes/">publicados</a> em diversas revisas e congressos. Para mais detalhes sobre o grupo, acesse a página <a class="page-link" href="{{ site.baseurl }}/sobre/">Sobre</a>.</h3>
+
   </div>
 
-  <div class="news">
-    <h1>Notícias Recentes</h1>
-    <!-- TODO -->
+
+
+  <div class="home-section news">
+
+    <h1 class="home-title">Notícias Recentes</h1>
+
+    {% assign news = ((site.news | sort: date) | reverse) %}
+
+    {% assign recent_news = "" | split: "/" %}
+  	{% for post in news limit: 5 %}
+  		{% assign recent_news = recent_news | push: post %}
+  	{% endfor %}
+
+    {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}
+
+    {%- if recent_news.size > 0 -%}
+      <ul class="post-list">
+        {%- for post in recent_news -%}
+        <li>
+          <h3>
+            <span class="post-meta">Publicado em: {{ post.date | date: date_format }}</span>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+        </li>
+        {%- endfor -%}
+      </ul>
+    {% endif %}
+
   </div>
 
-  <div class="support">
-    <h1>Apoio</h1>
+
+
+  <div class="home-section support">
+
+    <h1 class="home-title">Apoio</h1>
+
     <div class="instituitions">
+
       <a href="https://www.icmc.usp.br/" target="_blank"><img class="institution institution-left" src="{{ "/assets/img/support/usp-logo.png" | prepend: site.baseurl | prepend: site.url }}" alt=""></a>
       <a href="https://www5.usp.br/" target="_blank"><img class="institution institution-right" src="{{ "/assets/img/support/icmc-logo.png" | prepend: site.baseurl | prepend: site.url }}" alt=""></a>
       <span class="stretch"></span>
+
     </div>
+
   </div>
 
 </div>

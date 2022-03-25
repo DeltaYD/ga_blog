@@ -200,7 +200,7 @@
 
 
 /**
- * Page content
+ * Page content.
  */
 .page-content {
   background-color: $green-color;
@@ -226,19 +226,33 @@
 }
 
 .post-meta {
-  font-size: $small-font-size;
-  color: $grey-color;
+  float: right;
+  padding-top: $spacing-unit / 5;
+  padding-bottom: $spacing-unit / 5;
+  font-size: $base-font-size;
+  color: $grey-color-light;
 }
 
 .post-link {
-  display: block;
+  display: inline;
   @include relative-font-size(1.5);
+
+  &,
+  &:visited,
+  &:active {
+    color: $green-color;
+    text-decoration: none;
+  }
+  &:hover {
+    color: $white-color;
+    text-decoration: none;
+  }
 }
 
 
 
 /**
- * Posts
+ * Posts.
  */
 .post-header {
   margin-bottom: $spacing-unit;
