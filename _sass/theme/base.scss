@@ -1,5 +1,5 @@
 /**
- * Reset some basic elements
+ * Reset some basic elements.
  */
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
@@ -11,7 +11,7 @@ dl, dd, ol, ul, figure {
 
 
 /**
- * Basic styling
+ * Basic styling.
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
@@ -31,7 +31,7 @@ body {
 
 
 /**
- * Set `margin-bottom` to maintain vertical rhythm
+ * Set `margin-bottom` to maintain vertical rhythm.
  */
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
@@ -43,7 +43,7 @@ ul, ol, dl, figure,
 
 
 /**
- * `main` element
+ * `main` element.
  */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
@@ -52,7 +52,7 @@ main {
 
 
 /**
- * Images
+ * Images.
  */
 img {
   max-width: 100%;
@@ -62,7 +62,7 @@ img {
 
 
 /**
- * Figures
+ * Figures.
  */
 figure > img {
   display: block;
@@ -75,7 +75,7 @@ figcaption {
 
 
 /**
- * Lists
+ * Lists.
  */
 ul, ol {
   margin-left: $spacing-unit;
@@ -91,7 +91,7 @@ li {
 
 
 /**
- * Headings
+ * Headings.
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
@@ -100,33 +100,21 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /**
- * Links
+ * Links.
  */
 a {
   color: $green-color;
   text-decoration: none;
 
-  &:visited {
-    color: darken($green-color, 15%);
-  }
-
   &:hover {
-    color: $white-color;
-    text-decoration: underline;
-  }
-
-  .social-media-list &:hover {
+    color: $orange-color;
     text-decoration: none;
-
-    .username {
-      text-decoration: underline;
-    }
   }
 }
 
 
 /**
- * Blockquotes
+ * Blockquotes.
  */
 blockquote {
   color: $grey-color;
@@ -144,7 +132,7 @@ blockquote {
 
 
 /**
- * Code formatting
+ * Code formatting.
  */
 pre,
 code {
@@ -172,7 +160,7 @@ pre {
 
 
 /**
- * Wrapper
+ * Wrapper.
  */
 .wrapper {
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
@@ -194,7 +182,7 @@ pre {
 
 
 /**
- * Clearfix
+ * Clearfix.
  */
 %clearfix:after {
   content: "";
@@ -205,7 +193,7 @@ pre {
 
 
 /**
- * Icons
+ * Icons.
  */
 
 .svg-icon {
@@ -226,7 +214,7 @@ pre {
 
 
 /**
- * Tables
+ * Tables.
  */
 table {
   margin-bottom: $spacing-unit;
