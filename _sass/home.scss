@@ -51,8 +51,9 @@
 }
 
 
-// General.
-
+/**
+ * General.
+ */
 .home-title {
   color: $orange-color;
 }
@@ -62,16 +63,19 @@
 }
 
 
-// About section.
-
+/**
+ * About section.
+ */
 .about {
+  padding-top: $spacing-unit * 1.5;
   text-align: justify;
   text-justify: inter-word;
 }
 
 
-// News section.
-
+/**
+ * News section.
+ */
 .news {
   .news-list {
     margin-left: 0;
@@ -84,8 +88,9 @@
 }
 
 
-// Suppot section.
-
+/**
+ * Suppot section.
+ */
 .support {
   .instituitions {
     text-align: justify;
@@ -114,4 +119,40 @@
       display: inline-block;
     }
   }
+}
+
+
+/**
+ * Slider.
+ */
+
+// Navigation.
+.iis-previous-nav,
+.iis-next-nav {
+  background-color: $grey-color;
+}
+
+// Bullet Navigation.
+.iis-has-captions .iis-bullet-nav { max-width: 42%; }
+.iis-bullet-nav a {
+  border: 3px solid $grey-color;
+}
+.iis-bullet-nav a.iis-bullet-active,
+.iis-bullet-nav a:hover {
+  background: $orange-color;
+}
+
+// Captions.
+.iis-caption {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  background: $grey-color-a8;
+	border-radius: 5px;
+  font-size: $small-font-size;
+}
+.iis-caption .iis-caption-content,
+.iis-caption .iis-caption-content a,
+.iis-caption .iis-caption-content a:visited,
+.iis-caption .iis-caption-content a:hover,
+.iis-caption .iis-caption-content a:active {
+  color: $white-color;
 }

@@ -160,7 +160,7 @@ pre {
 
 
 /**
- * Wrapper.
+ * Wrappers.
  */
 .wrapper {
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
@@ -179,6 +179,16 @@ pre {
   }
 }
 
+.slider-wrapper {
+  max-width: -webkit-calc(#{$content-width});
+  max-width:         calc(#{$content-width});
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0;
+  padding-left: 0;
+  @extend %clearfix;
+}
+
 
 
 /**
@@ -195,7 +205,6 @@ pre {
 /**
  * Icons.
  */
-
 .svg-icon {
     width: 16px;
     height: 16px;
