@@ -1,0 +1,13 @@
+# example slider
+- selector: home_slider
+  bullets: true
+  captions: true
+  images:
+    - src: assets/img/slides/1.jpg
+      alt: image one
+    - src: assets/img/slides/2.jpg
+      alt: image two
+    - src: assets/img/slides/3.jpg
+      alt: image three
+  settings:
+    height: "'auto'"
