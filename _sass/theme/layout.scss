@@ -310,7 +310,6 @@
 
 .post-content {
   h2 {
-    color: $orange-color;
     @include relative-font-size(2);
 
     @include media-query($on-laptop) {
@@ -319,7 +318,6 @@
   }
 
   h3 {
-    color: $orange-color;
     @include relative-font-size(1.625);
 
     @include media-query($on-laptop) {
@@ -328,7 +326,6 @@
   }
 
   h4 {
-    color: $orange-color;
     @include relative-font-size(1.25);
 
     @include media-query($on-laptop) {
@@ -361,6 +358,7 @@
 }
 
 .post-section-title {
+  color: $orange-color;
   line-height: 1;
   margin-bottom: $spacing-unit / 2;
 }
@@ -409,23 +407,29 @@
   color: $grey-color-light;
 }
 
+.publication-title {
+  margin-bottom: 0;
+}
+
 .text-button {
   cursor: pointer;
 }
 
 .paper-abstract {
-  padding: $spacing-unit;
+  padding-top: $spacing-unit;
+  padding-left: $spacing-unit;
   text-align: justify;
   font-style: italic;
-  h4 {
+  p, h4 {
     font-style: normal;
     font-weight: bold;
   }
 }
 
 .paper-bibtex {
-  padding: $spacing-unit;
-  h4 {
+  padding-top: $spacing-unit;
+  padding-left: $spacing-unit;
+  p, h4 {
     font-weight: bold;
   }
   pre {

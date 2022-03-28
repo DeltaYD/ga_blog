@@ -41,30 +41,30 @@ title: Publicações
         <li>
           <div>
             <span class="publication-meta">{{ publication.date | date: date_format }} • {{ publication.author }}</span>
-            <h3>
-              {{ publication.title | escape }}
-            </h3>
+            <h3 class="publication-title">{{ publication.title | escape }}</h3>
 
             <a class="text-button" onclick="show('hidden-abstract{{forloop.index}}')">Abstract</a> •
-            <a class="text-button" onclick="show('hidden-bibtex{{forloop.index}}')">BibTeX</a> •
-            {%- if publication.link != null -%}
+            {% if publication.bibtex %}
+              &nbsp;<a class="text-button" onclick="show('hidden-bibtex{{forloop.index}}')">BibTeX</a> •
+            {% endif %}
+            {%- if publication.link -%}
               &nbsp;<a href="{{ publication.link }}" target="_blank">Full Paper</a>
-              {%- if publication.pdf_link != null -%}
+              {%- if publication.pdf_link -%}
               &nbsp;•
               {% endif %}
             {% endif %}
-            {%- if publication.pdf_link != null -%}
+            {%- if publication.pdf_link -%}
               <a href="{{ publication.pdf_link }}" target="_blank">PDF</a>
             {% endif %}
 
-            {% if publication.abstract != null %}
+            {% if publication.abstract %}
               <div class="paper-abstract" id="hidden-abstract{{forloop.index}}" style="display: none;">
                 <h4>Abstract</h4>
                 {{ publication.abstract }}
               </div>
             {% endif %}
 
-            {% if publication.bibtex != null %}
+            {% if publication.bibtex %}
               <div class="paper-bibtex" id="hidden-bibtex{{forloop.index}}" style="display: none;">
                 <h4>BibTeX • <span onclick="copy('copy{{forloop.index}}', 'text-copy{{forloop.index}}')"
                   class="copy" id="text-copy{{forloop.index}}">Copiar</span></h4>
