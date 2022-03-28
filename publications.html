@@ -10,22 +10,22 @@ title: Publicações
 
 
   {% if site.paginate %}
-    {% assign publication = ((paginator.publications | sort: date) | reverse) %}
+    {% assign publications = ((paginator.publications | sort: date) | reverse) %}
   {% else %}
-    {% assign publication = ((site.publications | sort: date) | reverse) %}
+    {% assign publications = ((site.publications | sort: date) | reverse) %}
   {% endif %}
 
 
   {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}
 
 
-  {%- if publication.size > 0 -%}
+  {%- if publications.size > 0 -%}
 
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
 
-    {%- for publication in publication -%}
+    {%- for publication in publications -%}
 
       {% unless publication.next %}
         <h3 class="year-separator">{{ publication.date | date: '%Y' }}</h3>
@@ -45,18 +45,30 @@ title: Publicações
               {{ publication.title | escape }}
             </h3>
 
-            <a class="show-abstract">Abstract</a> •
+            <a class="text-button" onclick="show('hidden-abstract{{forloop.index}}')">Abstract</a> •
+            <a class="text-button" onclick="show('hidden-bibtex{{forloop.index}}')">BibTeX</a> •
             {%- if publication.link != null -%}
-              &nbsp;<a href="{{ publication.link }}" target="_blank">Full Paper</a> •
+              &nbsp;<a href="{{ publication.link }}" target="_blank">Full Paper</a>
+              {%- if publication.pdf_link != null -%}
+              &nbsp;•
+              {% endif %}
             {% endif %}
             {%- if publication.pdf_link != null -%}
-              &nbsp;<a href="{{ publication.pdf_link }}" target="_blank">PDF</a> •
+              <a href="{{ publication.pdf_link }}" target="_blank">PDF</a>
             {% endif %}
-            <a href="{{ publication.link }}" target="_blank">BibTeX</a>
 
             {% if publication.abstract != null %}
-              <div class="hidden-abstract" tabindex="1">
+              <div class="paper-abstract" id="hidden-abstract{{forloop.index}}" style="display: none;">
+                <h4>Abstract</h4>
                 {{ publication.abstract }}
+              </div>
+            {% endif %}
+
+            {% if publication.bibtex != null %}
+              <div class="paper-bibtex" id="hidden-bibtex{{forloop.index}}" style="display: none;">
+                <h4>BibTeX • <span onclick="copy('copy{{forloop.index}}', 'text-copy{{forloop.index}}')"
+                  class="copy" id="text-copy{{forloop.index}}">Copiar</span></h4>
+                <pre id="copy{{forloop.index}}"><code>{{publication.bibtex}}</code></pre>
               </div>
             {% endif %}
           </div>
@@ -85,3 +97,5 @@ title: Publicações
   {%- endif -%}
 
 </div>
+
+<script src="{{ site.baseurl }}/assets/scripts.js" type="text/javascript"></script>
