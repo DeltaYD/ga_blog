@@ -68,12 +68,18 @@ layout: default
 
                       <a class="text-button" onclick="show('hidden-abstract{{forloop.index}}')">Abstract</a> •
                       {% if publication.bibtex %}
-                        &nbsp;<a class="text-button" onclick="show('hidden-bibtex{{forloop.index}}')">BibTeX</a> •
+                        <a class="text-button" onclick="show('hidden-bibtex{{forloop.index}}')">BibTeX</a> •
                       {% endif %}
                       {%- if publication.link -%}
-                        &nbsp;<a href="{{ publication.link }}" target="_blank">Full Paper</a>
+                        <a href="{{ publication.link }}" target="_blank">
+                          {% if publication.preprint %}
+                            Preprint
+                          {% else %}
+                            Full Paper
+                          {% endif %}
+                        </a>
                         {%- if publication.pdf_link -%}
-                        &nbsp;•
+                        •
                         {% endif %}
                       {% endif %}
                       {%- if publication.pdf_link -%}
