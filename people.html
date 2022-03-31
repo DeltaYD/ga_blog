@@ -10,32 +10,34 @@ title: Pessoas
 
 
   {% if site.paginate %}
-    {% assign person = paginator.people %}
+    {% assign people = paginator.people %}
   {% else %}
-    {% assign person = site.people %}
+    {% assign people = site.people %}
   {% endif %}
 
 
-  {%- if person.size > 0 -%}
+  {%- if people.size > 0 -%}
+
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in person -%}
-      <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+
+    <div class="post-section">
+      <div class="post-section-content team">
+        {%- for person in people -%}
+          <div class="author">
+            <a href="{{ person.url | relative_url }}">
+              <img class="author-picture" src="{{ site.baseurl }}{{ person.picture }}">
+              <h3 class="author-name">{{ person.name | escape }}</h3>
+              <p class="author-name">{{ person.role }}</p>
+            </a>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
 
     {% if site.paginate %}
       <div class="pager">

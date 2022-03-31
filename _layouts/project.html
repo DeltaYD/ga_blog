@@ -118,8 +118,10 @@ layout: default
           <div class="post-section-content team">
             {%- for team_member in team_members -%}
               <div class="author">
-                <img class="author-picture" src="{{ site.baseurl }}{{ group_members[team_member].picture }}">
-                <p class="author-name"> {{ group_members[team_member].name }} </p>
+                <a href="{{ site.baseurl }}/people/{{ team_member }}">
+                  <img class="author-picture" src="{{ site.baseurl }}{{ group_members[team_member].picture }}">
+                  <p class="author-name">{{ group_members[team_member].name }}</p>
+                </a>
               </div>
             {%- endfor -%}
           </div>

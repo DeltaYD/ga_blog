@@ -1,5 +1,5 @@
 /**
-* Site header.
+ * Site header.
  */
 .site-header {
   border: none;
@@ -369,18 +369,25 @@
 
 .team {
   flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .author {
+  display: flex;
+  justify-content: center;
+  text-align: center;
   padding: $spacing-unit;
   padding-bottom: 0;
 }
 
 .author-name {
-  text-align: center;
+  margin: 0;
 }
 
 .author-picture {
+  padding-bottom: $spacing-unit / 2;
   max-width: $author-picture;
   border-radius: 50%;
 }
