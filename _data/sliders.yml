@@ -1,14 +1,17 @@
-# example slider
+# Slides de imagens da página inicial.
+# Adicionar imagens na pasta "assets/img/slides/" antes de adicionar na lista.
+# As imagens precisam ter o mesmo tamanho vertical e horizontal.
+# Largura: 1500 pixels. Altura: 650 pixels.
 - selector: home_slider
   bullets: true
   captions: true
   images:
     - src: assets/img/slides/1.jpg
-      alt: image one image one image one image one image one image one image one image one image one image one image one image one image one
+      alt: mudar imagem e descrição
     - src: assets/img/slides/2.jpg
-      alt: image two
+      alt: mudar imagem e descrição
     - src: assets/img/slides/3.jpg
-      alt: image three
+      alt: mudar imagem e descrição
   settings:
     height: "'auto'"
     effect: "'fade'"

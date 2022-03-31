@@ -32,7 +32,7 @@
   line-height: $base-line-height * $base-font-size * 2.25;
 
   .nav-trigger {
-      display: none;
+    display: none;
   }
 
   .menu-icon {
@@ -391,13 +391,13 @@
  * Publications.
  */
 .publication-list {
- margin-left: 0;
- list-style: none;
- display: flex;
+  margin-left: 0;
+  list-style: none;
+  display: flex;
 
- > li {
-   margin-bottom: $spacing-unit;
- }
+  > li {
+    margin-bottom: $spacing-unit;
+  }
 }
 
 .publication-meta {

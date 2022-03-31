@@ -109,16 +109,17 @@ layout: default
       {%- endif -%}
 
 
-      {% assign members = site.data.teams[page.team] %}
+      {% assign group_members = site.data.members %}
+      {% assign team_members = site.data.teams[page.team] %}
 
-      {%- if members.size > 0 -%}
+      {%- if team_members.size > 0 -%}
         <div class="post-section">
           <h2 class="post-section-title p-name">Equipe</h2>
           <div class="post-section-content team">
-            {%- for member in members -%}
+            {%- for team_member in team_members -%}
               <div class="author">
-                <img class="author-picture" src="{{ site.baseurl }}{{ member.picture }}">
-                <p class="author-name"> {{ member.name }} </p>
+                <img class="author-picture" src="{{ site.baseurl }}{{ group_members[team_member].picture }}">
+                <p class="author-name"> {{ group_members[team_member].name }} </p>
               </div>
             {%- endfor -%}
           </div>
