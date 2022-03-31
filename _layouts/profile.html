@@ -4,58 +4,101 @@ layout: default
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <p class="post-meta">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.modified_date -%}
-        ~
-        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
-        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
-          {{ mdate | date: date_format }}
-        </time>
-      {%- endif -%}
-      {%- if page.author -%}
-        • {% for author in page.author %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-            {%- if forloop.last == false %}, {% endif -%}
-        {% endfor %}
-      {%- endif -%}
-    </p>
-  </header>
-
-
   <div class="post-content e-content" itemprop="articleBody">
-    <div>
-      {% if page.avatar != null %}
-        <img src="{{ site.baseurl }}{{ page.avatar }}">
-      {% endif %}
-
-      {% if page.name != null %}
-        <h1>
-          {{ page.name }}
-        </h1>
-      {% endif %}
-
-      {% if page.role != null %}
-        <h2>
-          {{ page.role }}
+    <div class="author">
+      <span>
+        <img class="author-picture" src="{{ site.baseurl }}{{ page.picture }}">
+        <h2 class="author-name">
+          {{ page.title | escape }}
+          {% if page.nickname %}
+            ({{ page.nickname }})
+          {% endif %}
         </h2>
-      {% endif %}
+        {% if page.role %}
+          <h3 class="author-name">{{ page.role }}</h3>
+        {% endif %}
+      </span>
     </div>
 
-    <div>
+
+    <div class="post-section">
+      <h2 class="post-section-title p-name">Sobre</h2>
       {{ content }}
     </div>
+
+
+    {%- if page.research_interests.size > 0 -%}
+      <div class="post-section">
+        <h2 class="post-section-title p-name">Interesses de Pesquisa</h2>
+        <ul>
+          {%- for research_interest in page.research_interests -%}
+            <li>{{ research_interest }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    {% endif %}
+
+
+    {%- if page.hobbies.size > 0 -%}
+      <div class="post-section">
+        <h2 class="post-section-title p-name">Hobbies</h2>
+        <ul>
+          {%- for hobby in page.hobbies -%}
+            <li>{{ hobby }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    {% endif %}
+
+
+    {%- if page.games.size > 0 -%}
+      <div class="post-section">
+        <h2 class="post-section-title p-name">Top três jogos</h2>
+        <ul>
+          {%- for game in page.games -%}
+            <li>{{ game }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    {% endif %}
+
+
+    <div class="post-section">
+      <h2 class="post-section-title p-name">Links</h2>
+      {%- if page.site -%}
+        <p><a href="{{ page.site }}">Site Profissional</a></p>
+      {%- endif -%}
+      {%- if page.itchio -%}
+        <p><a href="{{ page.itchio }}">Jogos no Itch.io</a></p>
+      {%- endif -%}
+      {%- if page.orcid -%}
+        <p><a href="{{ page.orcid }}">ORCID</a></p>
+      {%- endif -%}
+      {%- if page.lattes -%}
+        <p><a href="{{ page.lattes }}">Currículo Lattes</a></p>
+      {%- endif -%}
+      {%- if page.scholar -%}
+        <p><a href="{{ page.scholar }}">Google Scholar</a></p>
+      {%- endif -%}
+      {%- if page.researchgate -%}
+        <p><a href="{{ page.researchgate }}">Research Gate</a></p>
+      {%- endif -%}
+      {%- if page.facebook -%}
+        <p><a href="{{ page.facebook }}">Facebook</a></p>
+      {%- endif -%}
+      {%- if page.instagram -%}
+        <p><a href="{{ page.instagram }}">Instagram</a></p>
+      {%- endif -%}
+      {%- if page.twitter -%}
+        <p><a href="{{ page.twitter }}">Twitter</a></p>
+      {%- endif -%}
+      {%- if page.youtube -%}
+        <p><a href="{{ page.youtube }}">Canal do YouTube</a></p>
+      {%- endif -%}
+      {%- if page.linkedin -%}
+        <p><a href="{{ page.linkedin }}">LinkedIn</a></p>
+      {%- endif -%}
+    </div>
   </div>
-
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 
 </article>

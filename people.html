@@ -30,7 +30,7 @@ title: Pessoas
           <div class="author">
             <a href="{{ person.url | relative_url }}">
               <img class="author-picture" src="{{ site.baseurl }}{{ person.picture }}">
-              <h3 class="author-name">{{ person.name | escape }}</h3>
+              <h3 class="author-name">{{ person.title | escape }}</h3>
               <p class="author-name">{{ person.role }}</p>
             </a>
           </div>
