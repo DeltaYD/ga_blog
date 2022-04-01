@@ -64,7 +64,7 @@ layout: default
                   <li>
                     <div>
                       <span class="publication-meta">{{ publication.date | date: date_format }} • {{ publication.author }}</span>
-                      <h4 class="publication-title">{{ publication.title | escape }}</h4>
+                      <p class="publication-title">{{ publication.title | escape }}</p>
 
                       <a class="text-button" onclick="show('hidden-abstract{{forloop.index}}')">Abstract</a> •
                       {% if publication.bibtex %}
@@ -87,14 +87,14 @@ layout: default
                       {% endif %}
 
                       {% if publication.abstract %}
-                        <div class="paper-abstract" id="hidden-abstract{{forloop.index}}" style="display: none;">
+                        <div class="publication-abstract" id="hidden-abstract{{forloop.index}}" style="display: none;">
                           <p>Abstract</p>
                           {{ publication.abstract }}
                         </div>
                       {% endif %}
 
                       {% if publication.bibtex %}
-                        <div class="paper-bibtex" id="hidden-bibtex{{forloop.index}}" style="display: none;">
+                        <div class="publication-bibtex" id="hidden-bibtex{{forloop.index}}" style="display: none;">
                           <p>BibTeX • <span onclick="copy('copy{{forloop.index}}', 'text-copy{{forloop.index}}')"
                             class="copy" id="text-copy{{forloop.index}}">Copiar</span></p>
                           <pre id="copy{{forloop.index}}"><code>{{ publication.bibtex }}</code></pre>

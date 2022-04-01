@@ -388,7 +388,7 @@
 
 .author-picture {
   padding-bottom: $spacing-unit / 2;
-  max-width: $author-picture;
+  max-width: $person-picture;
   border-radius: 50%;
 }
 
@@ -415,6 +415,7 @@
 }
 
 .publication-title {
+  font-size: $base-font-size;
   margin-bottom: 0;
 }
 
@@ -422,7 +423,7 @@
   cursor: pointer;
 }
 
-.paper-abstract {
+.publication-abstract {
   padding-top: $spacing-unit;
   padding-left: $spacing-unit;
   text-align: justify;
@@ -433,7 +434,7 @@
   }
 }
 
-.paper-bibtex {
+.publication-bibtex {
   padding-top: $spacing-unit;
   padding-left: $spacing-unit;
   p, h4 {
@@ -450,4 +451,27 @@
 .copy {
   color: $green-color;
   cursor: pointer;
+}
+
+
+
+/**
+ * Members.
+ */
+.member {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: $spacing-unit;
+  padding-bottom: 0;
+}
+
+.member-name {
+  margin: 0;
+}
+
+.member-picture {
+  padding-bottom: $spacing-unit / 2;
+  max-width: $person-picture * 1.5;
+  border-radius: 50%;
 }
