@@ -20,9 +20,12 @@
 
   &,
   &:active,
-  &:visited,
-  &:hover {
+  &:visited {
     color: $orange-color;
+    text-decoration: none;
+  }
+  &:hover {
+    color: $white-color;
     text-decoration: none;
   }
 }
@@ -142,7 +145,7 @@
       text-decoration: none;
     }
     &:hover {
-      color: $orange-color;
+      color: $green-color;
       text-decoration: none;
     }
   }
@@ -219,7 +222,9 @@
 
 .page-heading {
   @include relative-font-size(2);
-  color: $orange-color;
+  color: $white-color;
+  border-bottom: 1px solid $white-color;
+  margin-bottom: $spacing-unit * 1.5;
 }
 
 .post-wrapper {
@@ -278,7 +283,7 @@
     text-decoration: none;
   }
   &:hover {
-    color: $white-color;
+    color: $orange-color;
     text-decoration: none;
   }
 }
@@ -301,7 +306,7 @@
   letter-spacing: -1px;
   line-height: 1;
   margin-bottom: $spacing-unit / 2;
-  color: $orange-color;
+  color: $white-color;
 
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
@@ -392,6 +397,25 @@
   border-radius: 50%;
 }
 
+.project-preview {
+  width: 100%;
+  border-radius: 10px;
+
+  .image-preview {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+
+    &:hover {
+      opacity: 80%;
+    }
+  }
+
+  &:hover {
+    opacity: 80%;
+  }
+}
+
 
 
 /**
@@ -419,8 +443,25 @@
   margin-bottom: 0;
 }
 
+
+
+/**
+ * Dropdown.
+ */
 .text-button {
   cursor: pointer;
+}
+
+.project-abstract {
+  padding: $spacing-unit * 1.5;
+  padding-top: 0;
+  padding-right: 0;
+  text-align: justify;
+  font-style: italic;
+  p, h4 {
+    font-style: normal;
+    font-weight: bold;
+  }
 }
 
 .publication-abstract {
@@ -514,11 +555,11 @@
     padding-right: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;
   }
-}
 
-h1 {
-  margin: 30px 0;
-  font-size: 4em;
-  line-height: 1;
-  letter-spacing: -1px;
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
 }

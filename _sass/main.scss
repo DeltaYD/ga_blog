@@ -26,12 +26,12 @@ $green-color: #4dcd98;
 $white-color: #ffffff;
 $gray-color: #343438;
 
-$gray-color-light: lighten($gray-color, 40%) !default;
-
 $orange-color-a8: rgba($orange-color, .8);
 $green-color-a8: rgba($green-color, .8);
 $white-color-a8: rgba($white-color, .8);
 $gray-color-a8: rgba($gray-color, .8);
+
+$gray-color-light: lighten($gray-color, 40%) !default;
 
 $background-color: lighten($gray-color, 10%) !default;
 
