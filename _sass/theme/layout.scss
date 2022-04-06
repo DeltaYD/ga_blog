@@ -475,3 +475,50 @@
   max-width: $person-picture * 1.5;
   border-radius: 50%;
 }
+
+
+
+/**
+ * 404: page not found.
+ */
+.notfound-content {
+  flex: 1;
+  display: flex;
+  padding: 0;
+  background-color: $background-color;
+}
+
+.notfound-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  @extend %clearfix;
+
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-unit;
+  padding-top: $spacing-unit / 2;
+  background-color: $gray-color;
+
+  text-align: center;
+  align-items:center;
+  justify-content: center;
+}
+
+.container {
+  min-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+  min-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+
+  @include media-query($on-laptop) {
+    min-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    min-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
+h1 {
+  margin: 30px 0;
+  font-size: 4em;
+  line-height: 1;
+  letter-spacing: -1px;
+}

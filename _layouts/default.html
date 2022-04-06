@@ -21,12 +21,20 @@ published: true
 	      </div>
 	    </main>
     {% else %}
-	    <main class="home-content" aria-label="Content">
-	      <div class="home-wrapper">
-	        {{ content }}
-	      </div>
-	    </main>
-    {% endif %}
+			{% if page.is404 %}
+		    <main class="notfound-content" aria-label="Content">
+		      <div class="notfound-wrapper">
+		        {{ content }}
+		      </div>
+		    </main>
+			{% else %}
+		    <main class="home-content" aria-label="Content">
+		      <div class="home-wrapper">
+		        {{ content }}
+		      </div>
+		    </main>
+    	{% endif %}
+		{% endif %}
 
 		{% include footer.html %}
 
