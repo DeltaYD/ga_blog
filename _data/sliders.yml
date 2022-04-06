@@ -8,10 +8,13 @@
   images:
     - src: assets/img/slides/1.jpg
       alt: mudar imagem e descrição
+      href: /gpj/projects/overlord
     - src: assets/img/slides/2.jpg
       alt: mudar imagem e descrição
+      href: /gpj/people/11920060
     - src: assets/img/slides/3.jpg
       alt: mudar imagem e descrição
+      href: /gpj/people/1
   settings:
     height: "'auto'"
     effect: "'fade'"
