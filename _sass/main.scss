@@ -33,6 +33,8 @@ $green-color-a8: rgba($green-color, .8);
 $white-color-a8: rgba($white-color, .8);
 $gray-color-a8: rgba($gray-color, .8);
 
+$background-color: lighten($gray-color, 10%) !default;
+
 
 
 // Define default of tables.
