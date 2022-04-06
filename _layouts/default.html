@@ -14,12 +14,12 @@ published: true
 
 		{% include header.html %}
 
-    {% if page.title %}
-	    <main class="page-content" aria-label="Content">
-	      <div class="post-wrapper">
-	        {{ content }}
-	      </div>
-	    </main>
+    {% if page.ishome %}
+			<main class="home-content" aria-label="Content">
+				<div class="home-wrapper">
+					{{ content }}
+				</div>
+			</main>
     {% else %}
 			{% if page.is404 %}
 		    <main class="notfound-content" aria-label="Content">
@@ -28,8 +28,8 @@ published: true
 		      </div>
 		    </main>
 			{% else %}
-		    <main class="home-content" aria-label="Content">
-		      <div class="home-wrapper">
+		    <main class="page-content" aria-label="Content">
+		      <div class="post-wrapper">
 		        {{ content }}
 		      </div>
 		    </main>
