@@ -25,7 +25,7 @@
 <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
 <script type="application/ld+json">
-{"description":"{{ site.description }}","headline":"{{ site.title }}","url":"{{ page.url | prepend: site.baseurl | prepend: site.url }}","@type":"WebSite","name":"{{ site.title }}","@context":"https://schema.org"}</script>
+{"description":"{{ site.description }}","headline":"{{ site.title }}","url":"{{ page.url | prepend: site.baseurl_root | prepend: site.url }}","@type":"WebSite","name":"{{ site.title }}","@context":"https://schema.org"}</script>
 
 <!-- End Jekyll SEO tag -->
 

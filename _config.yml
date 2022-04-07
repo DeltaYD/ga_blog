@@ -8,7 +8,7 @@ description: >- # this means to ignore newlines until "url:"
 # Site Settings
 
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: /gpj # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 permalink: /:title
 timezone: America/Sao_Paulo
 mathjax: true # enables support for mathjax (LaTeX)
@@ -32,18 +32,31 @@ plugins:
 collections:
   news:
     output: true
-    permalink: /news/:name
   people:
     output: true
-    permalink: /people/:name
   projects:
     output: true
-    permalink: /projects/:name
   publications:
     output: true
-    permalink: /publications/:name
 
 defaults:
+  - values:
+      locale: br
+  - scope:
+      path: _news/en/**
+      type: news
+    values:
+      locale: en
+  - scope:
+      path: _people/en/**
+      type: people
+    values:
+      locale: en
+  - scope:
+      path: _projects/en/**
+      type: projects
+    values:
+      locale: en
   - scope:
       path: "assets/img"
     values:

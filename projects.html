@@ -10,9 +10,9 @@ title: Projetos
 
 
   {% if site.paginate %}
-    {% assign projects = ((paginator.projects | sort: order) | reverse) %}
+    {% assign projects = ((paginator.projects | where: "locale", site.lang) | sort: order) | reverse %}
   {% else %}
-    {% assign projects = ((site.projects | sort: order) | reverse) %}
+    {% assign projects = ((site.projects | where: "locale", site.lang) | sort: order) | reverse %}
   {% endif %}
 
 
@@ -26,7 +26,7 @@ title: Projetos
           <h3>
             <a class="post-link" href="{{ project.url | relative_url }}">
               <div class="project-preview">
-                <img class="image-preview" src="{{ site.baseurl }}{{ project.image_preview }}">
+                <img class="image-preview" src="{{ site.baseurl_root }}{{ project.image_preview }}">
               </div>
               {{ project.title | escape }}
             </a> •
@@ -64,4 +64,4 @@ title: Projetos
 
 </div>
 
-<script src="{{ site.baseurl }}/assets/js/scripts.js" type="text/javascript"></script>
+<script src="{{ site.baseurl_root }}/assets/js/scripts.js" type="text/javascript"></script>

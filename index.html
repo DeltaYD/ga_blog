@@ -34,7 +34,7 @@ image_sliders: home_slider
 
     <h1 class="home-title">Notícias Recentes</h1>
 
-    {% assign news = ((site.news | sort: date) | reverse) %}
+    {% assign news = ((site.news | where: "locale", site.lang) | sort: date) | reverse %}
 
     {% assign recent_news = "" | split: "/" %}
   	{% for post in news limit: 5 %}
@@ -68,8 +68,8 @@ image_sliders: home_slider
 
     <div class="instituitions">
 
-      <a href="https://www.icmc.usp.br/" target="_blank"><img class="institution institution-left" src="{{ "/assets/img/support/usp-logo.png" | prepend: site.baseurl | prepend: site.url }}" alt=""></a>
-      <a href="https://www5.usp.br/" target="_blank"><img class="institution institution-right" src="{{ "/assets/img/support/icmc-logo.png" | prepend: site.baseurl | prepend: site.url }}" alt=""></a>
+      <a href="https://www.icmc.usp.br/" target="_blank"><img class="institution institution-left" src="{{ "/assets/img/support/usp-logo.png" | prepend: site.baseurl_root | prepend: site.url }}" alt=""></a>
+      <a href="https://www5.usp.br/" target="_blank"><img class="institution institution-right" src="{{ "/assets/img/support/icmc-logo.png" | prepend: site.baseurl_root | prepend: site.url }}" alt=""></a>
       <span class="stretch"></span>
 
     </div>

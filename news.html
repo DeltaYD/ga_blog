@@ -10,9 +10,9 @@ title: Notícias
 
 
   {% if site.paginate %}
-    {% assign posts = paginator.news %}
+    {% assign posts = paginator.news | where: "locale", site.lang %}
   {% else %}
-    {% assign posts = site.news %}
+    {% assign posts = site.news | where: "locale", site.lang %}
   {% endif %}
 
   {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}
