@@ -18,9 +18,12 @@
         {% for lang in site.languages %}
           {% unless site.lang == lang %}
             {% if lang == site.default_lang and site.default_locale_in_subfolder != true %}
-              <a href="{{ site.baseurl_root }}{{ page.url }}">{% t langs.{{ lang }} %}</a>
+              {% assign url = page.url | replace: '/en', '' %}
+              <a href="{{ site.baseurl_root }}{{ url }}">{% t langs.{{ lang }} %}</a>
             {% else %}
-              <a href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}">{% t langs.{{ lang }} %}</a>
+              {% assign l = '/' | append: lang | append: '/' %}
+              {% assign url = page.url | replace: '/', l %}
+              <a href="{{ url }}">{% t langs.{{ lang }} %}</a>
             {% endif %}
 
             {% assign next = forloop.index | plus: 1 %}
