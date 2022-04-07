@@ -41,5 +41,11 @@ projects:
   publications: Publications
   team: Team
 
+# Sliders
+sliders:
+  img1: change image and description
+  img2: change image and description
+  img3: change image and description
+
 others:
   notfound: Page not found
