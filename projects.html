@@ -28,12 +28,12 @@ title: global.projects
               </div>
               {{ project.title | escape }}
             </a> •
-            <a class="text-button" onclick="show('hidden-abstract{{forloop.index}}')">Abstract</a>
+            <a class="text-button" onclick="show('hidden-abstract{{forloop.index}}')">{% t global.abstract %}</a>
           </h3>
         </li>
         {% if project.abstract %}
           <div class="project-abstract" id="hidden-abstract{{forloop.index}}" style="display: none;">
-            <h4>Abstract</h4>
+            <h4>{% t global.abstract %}</h4>
             {{ project.abstract }}
           </div>
         {% endif %}

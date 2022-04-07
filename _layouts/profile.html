@@ -22,14 +22,14 @@ layout: default
 
 
     <div class="post-section">
-      <h2 class="post-section-title p-name">Sobre</h2>
+      <h2 class="post-section-title p-name">{% t profile.about %}</h2>
       {{ content }}
     </div>
 
 
     {%- if page.research_interests.size > 0 -%}
       <div class="post-section">
-        <h2 class="post-section-title p-name">Interesses de Pesquisa</h2>
+        <h2 class="post-section-title p-name">{% t profile.research_interests %}</h2>
         <ul>
           {%- for research_interest in page.research_interests -%}
             <li>{{ research_interest }}</li>
@@ -41,7 +41,7 @@ layout: default
 
     {%- if page.hobbies.size > 0 -%}
       <div class="post-section">
-        <h2 class="post-section-title p-name">Hobbies</h2>
+        <h2 class="post-section-title p-name">{% t profile.hobbies %}</h2>
         <ul>
           {%- for hobby in page.hobbies -%}
             <li>{{ hobby }}</li>
@@ -53,7 +53,7 @@ layout: default
 
     {%- if page.games.size > 0 -%}
       <div class="post-section">
-        <h2 class="post-section-title p-name">Top três jogos</h2>
+        <h2 class="post-section-title p-name">{% t profile.games %}</h2>
         <ul>
           {%- for game in page.games -%}
             <li>{{ game }}</li>
@@ -64,7 +64,7 @@ layout: default
 
 
     <div class="post-section">
-      <h2 class="post-section-title p-name">Links</h2>
+      <h2 class="post-section-title p-name">{% t profile.links %}</h2>
       {%- if page.site -%}
         <p><a href="{{ page.site }}">Site Profissional</a></p>
       {%- endif -%}

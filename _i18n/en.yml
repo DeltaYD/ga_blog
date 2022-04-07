@@ -1,3 +1,7 @@
+langs:
+  br: BR
+  en: EN
+
 global:
   tagline: English
   # Main
@@ -12,6 +16,9 @@ global:
   contact: Contact
   # Footer
   host: Host on GitHub Pages with Jekyll
+  # Remaining
+  published_at: Published at
+  abstract: Abstract
 
 # Homepage
 homepage:
@@ -20,9 +27,19 @@ homepage:
   recent_news: Recent News
   support: Support
 
+# Profile
+profile:
+  about: About
+  research_interests: Research Interests
+  hobbies: Hobbies
+  games: Top 3 Games
+  links: Links
+
+# Projects
+projects:
+  abstract: Abstract
+  publications: Publications
+  team: Team
+
 others:
   notfound: Page not found
-
-langs:
-  br: BR
-  en: EN

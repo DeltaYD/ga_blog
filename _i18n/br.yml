@@ -1,3 +1,7 @@
+langs:
+  br: BR
+  en: EN
+
 global:
   tagline: Português Brasileiro
   # Main
@@ -12,6 +16,9 @@ global:
   contact: Contato
   # Footer
   host: Hospedado no GitHub Pages com Jekyll
+  # Remaining
+  published_at: Publicado em
+  abstract: Resumo
 
 # Homepage
 homepage:
@@ -20,9 +27,19 @@ homepage:
   recent_news: Notícias Recentes
   support: Apoio
 
+# Profile
+profile:
+  about: Sobre
+  research_interests: Interesses de pesquisa
+  hobbies: Passa Tempos
+  games: Top 3 Jogos
+  links: Links
+
+# Projects
+projects:
+  abstract: Resumo
+  publications: Publicações
+  team: Equipe
+
 others:
   notfound: Página não encontrada
-
-langs:
-  br: BR
-  en: EN

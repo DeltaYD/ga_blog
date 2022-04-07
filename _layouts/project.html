@@ -25,7 +25,7 @@ layout: default
 
       {% if page.abstract %}
         <div class="abstract-section">
-          <h2 class="post-section-title p-name">Resumo</h2>
+          <h2 class="post-section-title p-name">{% t projects.abstract %}</h2>
           <div class="post-section-content abstract-content">
             {{ page.abstract }}
           </div>
@@ -47,7 +47,7 @@ layout: default
 
       {%- if publications.size > 0 -%}
         <div class="post-section">
-          <h2 class="post-section-title p-name">Publicações</h2>
+          <h2 class="post-section-title p-name">{% t projects.publications %}</h2>
           <div class="post-section-content">
             <ul class="post-list">
               {%- for publication in publications -%}
@@ -114,7 +114,7 @@ layout: default
 
       {%- if team_members.size > 0 -%}
         <div class="post-section">
-          <h2 class="post-section-title p-name">Equipe</h2>
+          <h2 class="post-section-title p-name">{% t projects.team %}</h2>
           <div class="post-section-content team">
             {%- for team_member in team_members -%}
               <div class="author">
