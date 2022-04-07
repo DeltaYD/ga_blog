@@ -1,12 +1,10 @@
 ---
 layout: default
-title: Notícias
+title: global.news
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+  <h1 class="page-heading">{% t page.title %}</h1>
 
 
   {% if site.paginate %}

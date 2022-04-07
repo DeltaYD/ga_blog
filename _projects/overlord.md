@@ -1,5 +1,7 @@
 ---
 layout: project
+uid: 1
+type: project
 order: 1
 team: overlord
 title: Overlord

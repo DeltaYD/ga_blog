@@ -1,5 +1,7 @@
 ---
 layout: project
+uid: 2
+type: project
 order: 2
 title: Educational Games
 date: 2019-01-31

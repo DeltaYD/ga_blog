@@ -1,8 +1,28 @@
 global:
   tagline: English
+  # Main
+  title: Game Research Group
+  # NavBar and Page Titles
+  news: News
+  people: People
+  projects: Projects
+  publications: Publications
+  partners: Partners
   about: About
   contact: Contact
-  partners: Partners
+  # Footer
+  host: Host on GitHub Pages with Jekyll
+
+# Homepage
+homepage:
+  welcome: A group dedicated to research in Digital Games
+  about: About the Group
+  recent_news: Recent News
+  support: Support
+
+others:
+  notfound: Page not found
+
 langs:
-  br: Português Brasileiro
-  en: English
+  br: BR
+  en: EN

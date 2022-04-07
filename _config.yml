@@ -13,7 +13,7 @@ permalink: /:title
 timezone: America/Sao_Paulo
 mathjax: true # enables support for mathjax (LaTeX)
 languages: ["br", "en"]
-exclude_from_localizations: ["assets"]
+exclude_from_localizations: ["assets", "en"]
 
 
 # Site Build

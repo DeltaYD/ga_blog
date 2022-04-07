@@ -5,14 +5,18 @@
 <!-- Begin Jekyll SEO tag v2.7.1 -->
 
 {% if page.title %}
-	<title>{{ page.title }} · {{ site.title }}</title>
+	{% if page.type %}
+		<title>{{ page.title }} · {% t global.title %}</title>
+	{% else %}
+		<title>{% t page.title %} · {% t global.title %}</title>
+	{% endif %}
 {% else %}
-	<title>{{ site.title }}</title>
+	<title>{% t global.title %}</title>
 {% endif %}
 
 
 <!-- Add favicon -->
-<link rel="icon" href="{{ "/assets/img/favicon.png" | prepend: site.baseurl | prepend: site.url }}">
+<link rel="icon" href="{{ "/assets/img/favicon.png" | prepend: site.baseurl_root | prepend: site.url }}">
 <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
 
 <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">

@@ -1,8 +1,28 @@
 global:
   tagline: Português Brasileiro
+  # Main
+  title: Grupo de Pesquisa em Jogos
+  # NavBar and Page Titles
+  news: Notícias
+  people: Pessoas
+  projects: Projetos
+  publications: Publicações
+  partners: Parcerias
   about: Sobre
   contact: Contato
-  partners: Parcerias
+  # Footer
+  host: Hospedado no GitHub Pages com Jekyll
+
+# Homepage
+homepage:
+  welcome: Um grupo dedicado à pesquisa em Jogos Digitais
+  about: Sobre o Grupo
+  recent_news: Notícias Recentes
+  support: Apoio
+
+others:
+  notfound: Página não encontrada
+
 langs:
-  br: Português Brasileiro
-  en: English
+  br: BR
+  en: EN
