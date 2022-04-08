@@ -8,7 +8,7 @@ description: >- # this means to ignore newlines until "url:"
 # Site Settings
 
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: /gpj # the subpath of your site, e.g. /blog
 permalink: /:title
 timezone: America/Sao_Paulo
 mathjax: true # enables support for mathjax (LaTeX)
