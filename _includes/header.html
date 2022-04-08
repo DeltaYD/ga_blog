@@ -6,13 +6,20 @@
 
     <nav class="site-nav">
       <div class="trigger">
-        <a class="page-link" href="{{ site.baseurl }}/news">Notícias</a>
-        <a class="page-link" href="{{ site.baseurl }}/people">Pessoas</a>
-        <a class="page-link" href="{{ site.baseurl }}/projects">Projetos</a>
-        <a class="page-link" href="{{ site.baseurl }}/publications">Publicações</a>
-        <a class="page-link" href="{{ site.baseurl }}/partners">Parcerias</a>
-        <a class="page-link" href="{{ site.baseurl }}/about">Sobre</a>
-        <a class="page-link" href="{{ site.baseurl }}/contact">Contato</a>
+        {% assign link = '/news' %}
+        <a class="page-link" href="{{ link | prepend: site.baseurl | prepend: site.url }}">Notícias</a>
+        {% assign link = '/people' %}
+        <a class="page-link" href="{{ link | prepend: site.baseurl | prepend: site.url }}">Pessoas</a>
+        {% assign link = '/projects' %}
+        <a class="page-link" href="{{ link | prepend: site.baseurl | prepend: site.url }}">Projetos</a>
+        {% assign link = '/publications' %}
+        <a class="page-link" href="{{ link | prepend: site.baseurl | prepend: site.url }}">Publicações</a>
+        {% assign link = '/partners' %}
+        <a class="page-link" href="{{ link | prepend: site.baseurl | prepend: site.url }}">Parcerias</a>
+        {% assign link = '/about' %}
+        <a class="page-link" href="{{ link | prepend: site.baseurl | prepend: site.url }}">Sobre</a>
+        {% assign link = '/contact' %}
+        <a class="page-link" href="{{ link | prepend: site.baseurl | prepend: site.url }}">Contato</a>
       </div>
     </nav>
 
