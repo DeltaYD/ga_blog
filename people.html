@@ -8,9 +8,9 @@ title: People
 
 
   {% if site.paginate %}
-    {% assign people = paginator.people %}
+    {% assign people = paginator.people | sort: current %}
   {% else %}
-    {% assign people = site.people %}
+    {% assign people = site.people | sort: current %}
   {% endif %}
 
 

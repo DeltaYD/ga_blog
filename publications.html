@@ -8,9 +8,9 @@ title: Publications
 
 
   {% if site.paginate %}
-    {% assign publications = (paginator.publications | sort: date) | reverse %}
+    {% assign publications = paginator.publications | sort: date | reverse %}
   {% else %}
-    {% assign publications = (site.publications | sort: date) | reverse %}
+    {% assign publications = site.publications | sort: date | reverse %}
   {% endif %}
 
 

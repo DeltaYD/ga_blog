@@ -8,9 +8,9 @@ title: Projects
 
 
   {% if site.paginate %}
-    {% assign projects = ((paginator.projects) | sort: order) | reverse %}
+    {% assign projects = paginator.projects | sort: order | reverse %}
   {% else %}
-    {% assign projects = ((site.projects) | sort: order) | reverse %}
+    {% assign projects = site.projects | sort: order | reverse %}
   {% endif %}
 
 

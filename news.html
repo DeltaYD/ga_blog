@@ -8,9 +8,9 @@ title: News
 
 
   {% if site.paginate %}
-    {% assign posts = paginator.news %}
+    {% assign posts = paginator.news | sort: date | reverse %}
   {% else %}
-    {% assign posts = site.news %}
+    {% assign posts = site.news | sort: date | reverse %}
   {% endif %}
 
   {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}

@@ -34,7 +34,7 @@ image_sliders: home_slider
 
     <h1 class="home-title">Recent News</h1>
 
-    {% assign news = ((site.news) | sort: date) | reverse %}
+    {% assign news = site.news | sort: date | reverse %}
 
     {% assign recent_news = "" | split: "/" %}
   	{% for post in news limit: 5 %}
