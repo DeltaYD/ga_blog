@@ -1,6 +1,5 @@
 ---
 layout: project
-type: project
 order: 2
 title: Jogos Educativos
 date: 2019-01-31

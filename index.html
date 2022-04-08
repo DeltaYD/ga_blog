@@ -1,12 +1,13 @@
 ---
 layout: default
+title: global.title
 ishome: true
 image_sliders: home_slider
 ---
 
 <div class="background">
   <div class="gray-filter">
-    <span class="welcome">Um grupo dedicado à pesquisa em Jogos Digitais</span>
+    <span class="welcome">{% t homepage.welcome %}</span>
   </div>
 </div>
 
@@ -22,9 +23,9 @@ image_sliders: home_slider
 
   <div class="home-section about">
 
-    <h1 class="home-title">About</h1>
+    <h1 class="home-title">{% t homepage.about %}</h1>
 
-    <h3>O Grupo de Pesquisa em Jogos do <a href="https://www.icmc.usp.br/" target="_blank">ICMC</a> é uma <a class="page-link" href="{{ site.baseurl }}/people/">equipe</a> de pesquisadores e alunos de iniciação científica interessados em desenvolvimento de soluções para jogos ou que utilizam jogos. Assim, aplicamos e criamos diferentes técnicas de inteliência artificial e mecânicas de jogos em nossos <a class="page-link" href="{{ site.baseurl }}/projects/">projetos</a>. Os quais são focados principalmente em Geração Procedural de Conteúdo e Jogos Sérios voltados à Educação. Vários de nossos projetos foram <a class="page-link" href="{{ site.baseurl }}/publications/">publicados</a> em diversas revisas e congressos. Para mais detalhes sobre o grupo, acesse a página <a class="page-link" href="{{ site.baseurl }}/about/">Sobre</a>.</h3>
+    {% tf short_about.html %}
 
   </div>
 
@@ -32,9 +33,9 @@ image_sliders: home_slider
 
   <div class="home-section news">
 
-    <h1 class="home-title">Recent News</h1>
+    <h1 class="home-title">{% t homepage.recent_news %}</h1>
 
-    {% assign news = site.news | sort: date | reverse %}
+    {% assign news = site.news | where: "locale", site.lang | sort: date | reverse %}
 
     {% assign recent_news = "" | split: "/" %}
   	{% for post in news limit: 5 %}
@@ -48,7 +49,7 @@ image_sliders: home_slider
         {%- for post in recent_news -%}
         <li>
           <h3>
-            <span class="post-meta">Publicado em: {{ post.date | date: date_format }}</span>
+            <span class="post-meta">{% t global.published_at %} {{ post.date | date: date_format }}</span>
             <a class="post-link" href="{{ post.url | relative_url }}">
               {{ post.title | escape }}
             </a>
@@ -64,12 +65,12 @@ image_sliders: home_slider
 
   <div class="home-section support">
 
-    <h1 class="home-title">Support</h1>
+    <h1 class="home-title">{% t homepage.support %}</h1>
 
     <div class="instituitions">
 
-      <a href="https://www.icmc.usp.br/" target="_blank"><img class="institution institution-left" src="{{ "/assets/img/support/usp-logo.png" | prepend: site.baseurl | prepend: site.url }}" alt=""></a>
-      <a href="https://www5.usp.br/" target="_blank"><img class="institution institution-right" src="{{ "/assets/img/support/icmc-logo.png" | prepend: site.baseurl | prepend: site.url }}" alt=""></a>
+      <a href="https://www5.usp.br/" target="_blank"><img class="institution institution-left" src="{{ "/assets/img/support/usp-logo.png" | prepend: site.baseurl_root | prepend: site.url }}" alt=""></a>
+      <a href="https://www.icmc.usp.br/" target="_blank"><img class="institution institution-right" src="{{ "/assets/img/support/icmc-logo.png" | prepend: site.baseurl_root | prepend: site.url }}" alt=""></a>
       <span class="stretch"></span>
 
     </div>
