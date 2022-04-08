@@ -7,7 +7,7 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     <div class="member">
       <span>
-        <img class="member-picture" src="{{ site.baseurl_root }}{{ page.picture }}">
+        <img class="member-picture" src="{{ site.baseurl }}{{ page.picture }}">
         <h2 class="member-name">
           {{ page.title | escape }}
           {% if page.nickname %}
@@ -22,14 +22,14 @@ layout: default
 
 
     <div class="post-section">
-      <h2 class="post-section-title p-name">{% t profile.about %}</h2>
+      <h2 class="post-section-title p-name">About</h2>
       {{ content }}
     </div>
 
 
     {%- if page.research_interests.size > 0 -%}
       <div class="post-section">
-        <h2 class="post-section-title p-name">{% t profile.research_interests %}</h2>
+        <h2 class="post-section-title p-name">Research Interests</h2>
         <ul>
           {%- for research_interest in page.research_interests -%}
             <li>{{ research_interest }}</li>
@@ -41,7 +41,7 @@ layout: default
 
     {%- if page.hobbies.size > 0 -%}
       <div class="post-section">
-        <h2 class="post-section-title p-name">{% t profile.hobbies %}</h2>
+        <h2 class="post-section-title p-name">Hobbies</h2>
         <ul>
           {%- for hobby in page.hobbies -%}
             <li>{{ hobby }}</li>
@@ -53,7 +53,7 @@ layout: default
 
     {%- if page.games.size > 0 -%}
       <div class="post-section">
-        <h2 class="post-section-title p-name">{% t profile.games %}</h2>
+        <h2 class="post-section-title p-name">Games</h2>
         <ul>
           {%- for game in page.games -%}
             <li>{{ game }}</li>
@@ -64,7 +64,7 @@ layout: default
 
 
     <div class="post-section">
-      <h2 class="post-section-title p-name">{% t profile.links %}</h2>
+      <h2 class="post-section-title p-name">Links</h2>
       {%- if page.site -%}
         <p><a href="{{ page.site }}">Site Profissional</a></p>
       {%- endif -%}

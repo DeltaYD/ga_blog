@@ -12,8 +12,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 permalink: /:title
 timezone: America/Sao_Paulo
 mathjax: true # enables support for mathjax (LaTeX)
-languages: ["br", "en"]
-exclude_from_localizations: ["assets"]
 
 
 # Site Build
@@ -27,7 +25,6 @@ sass:
 
 plugins:
   - jekyll-feed
-  - jekyll-multiple-languages-plugin
 
 collections:
   news:

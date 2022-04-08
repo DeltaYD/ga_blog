@@ -2,38 +2,17 @@
 
   <div class="wrapper">
 
-    <a class="site-title" rel="author" href="{{ site.baseurl }}/">{% t global.title %}</a>
+    <a class="site-title" rel="author" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
     <nav class="site-nav">
       <div class="trigger">
-        <a class="page-link" href="{{ site.baseurl }}/news/">{% t global.news %}</a>
-        <a class="page-link" href="{{ site.baseurl }}/people/">{% t global.people %}</a>
-        <a class="page-link" href="{{ site.baseurl }}/projects/">{% t global.projects %}</a>
-        <a class="page-link" href="{{ site.baseurl }}/publications/">{% t global.publications %}</a>
-        <a class="page-link" href="{{ site.baseurl }}/partners/">{% t global.partners %}</a>
-        <a class="page-link" href="{{ site.baseurl }}/about/">{% t global.about %}</a>
-        <a class="page-link" href="{{ site.baseurl }}/contact/">{% t global.contact %}</a>
-
-        <!-- Adds links to other languages on the post -->
-        {% for lang in site.languages %}
-          {% unless site.lang == lang %}
-            {% if lang == site.default_lang and site.default_locale_in_subfolder != true %}
-              {% assign url = page.url | replace: '/en', '' %}
-              <a href="{{ site.baseurl_root }}{{ url }}">{% t langs.{{ lang }} %}</a>
-            {% else %}
-              {% assign l = '/' | append: lang | append: '/' %}
-              {% assign url = page.url | replace: '/', l %}
-              <a href="{{ url }}">{% t langs.{{ lang }} %}</a>
-            {% endif %}
-
-            {% assign next = forloop.index | plus: 1 %}
-
-            {% if forloop.last != true and site.languages[forloop.index] != site.lang or site.languages[forloop.index] == site.lang and next < forloop.length %}
-              <span class="separator"> &bull; </span>
-            {% endif %}
-
-          {% endunless %}
-        {% endfor %}
+        <a class="page-link" href="{{ site.baseurl }}/news/">Notícias</a>
+        <a class="page-link" href="{{ site.baseurl }}/people/">Pessoas</a>
+        <a class="page-link" href="{{ site.baseurl }}/projects/">Projetos</a>
+        <a class="page-link" href="{{ site.baseurl }}/publications/">Publicações</a>
+        <a class="page-link" href="{{ site.baseurl }}/partners/">Parcerias</a>
+        <a class="page-link" href="{{ site.baseurl }}/about/">Sobre</a>
+        <a class="page-link" href="{{ site.baseurl }}/contact/">Contato</a>
       </div>
     </nav>
 

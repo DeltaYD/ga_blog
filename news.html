@@ -1,16 +1,16 @@
 ---
 layout: default
-title: global.news
+title: News
 ---
 
 <div class="home">
-  <h1 class="page-heading">{% t page.title %}</h1>
+  <h1 class="page-heading">{{ page.title }}</h1>
 
 
   {% if site.paginate %}
-    {% assign posts = paginator.news | where: "locale", site.lang %}
+    {% assign posts = paginator.news %}
   {% else %}
-    {% assign posts = site.news | where: "locale", site.lang %}
+    {% assign posts = site.news %}
   {% endif %}
 
   {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}
@@ -22,7 +22,7 @@ title: global.news
     <ul class="post-list">
       {%- for post in posts -%}
       <li>
-        <span class="post-meta">{% t global.published_at %}: {{ post.date | date: date_format }}</span>
+        <span class="post-meta">Publicado em: {{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
