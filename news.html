@@ -13,7 +13,7 @@ title: News
     {% assign posts = site.news | sort: date | reverse %}
   {% endif %}
 
-  {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}
+  {% include data_format.html %}
 
   {%- if posts.size > 0 -%}
     {%- if page.list_title -%}

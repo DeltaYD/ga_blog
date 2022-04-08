@@ -13,9 +13,7 @@ title: Publications
     {% assign publications = site.publications | sort: date | reverse %}
   {% endif %}
 
-
-  {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}
-
+  {% include data_format.html %}
 
   {%- if publications.size > 0 -%}
 
@@ -72,7 +70,7 @@ title: Publications
               <div class="publication-bibtex" id="hidden-bibtex{{forloop.index}}" style="display: none;">
                 <h4>BibTeX • <span onclick="copy('copy{{forloop.index}}', 'text-copy{{forloop.index}}')"
                   class="copy" id="text-copy{{forloop.index}}">Copiar</span></h4>
-                <pre id="copy{{forloop.index}}"><code>{{publication.bibtex}}</code></pre>
+                <pre id="copy{{forloop.index}}"><code>{{ publication.bibtex }}</code></pre>
               </div>
             {% endif %}
           </div>

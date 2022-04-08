@@ -41,7 +41,7 @@ image_sliders: home_slider
   		{% assign recent_news = recent_news | push: post %}
   	{% endfor %}
 
-    {% assign date_format = site.minima.date_format | default: "%d/%m/%Y" %}
+    {% include data_format.html %}
 
     {%- if recent_news.size > 0 -%}
       <ul class="news-list">

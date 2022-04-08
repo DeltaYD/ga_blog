@@ -1,6 +1,5 @@
 ---
 layout: project
-uid: 2
 type: project
 order: 2
 title: Jogos Educativos
