@@ -93,25 +93,22 @@
  */
 .support {
   .instituitions {
-    text-align: justify;
+    text-align: center;
     font-size: 0;
     line-height: 0;
 
     .institution {
       width: 250px;
       display: inline-block;
+      padding-bottom: $spacing-unit;
     }
 
     .institution-left {
       padding-right: $spacing-unit;
-      padding-left: $spacing-unit * 8;
-      padding-bottom: $spacing-unit;
     }
 
     .institution-right {
-      padding-right: $spacing-unit * 8;
       padding-left: $spacing-unit;
-      padding-bottom: $spacing-unit;
     }
 
     .stretch {
