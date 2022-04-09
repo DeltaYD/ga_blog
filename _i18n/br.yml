@@ -6,6 +6,7 @@ global:
   tagline: Português Brasileiro
   # Main
   title: Grupo de Pesquisa em Jogos
+  description: Grupo de Pesquisa em Jogos do ICMC.
   # NavBar and Page Titles
   news: Notícias
   people: Pessoas
@@ -49,3 +50,4 @@ sliders:
 
 others:
   notfound: Página não encontrada
+  request_notfound: A página solicitada não pôde ser encontrada.

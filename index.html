@@ -1,6 +1,5 @@
 ---
 layout: default
-title: global.title
 ishome: true
 image_sliders: home_slider
 ---
@@ -25,7 +24,7 @@ image_sliders: home_slider
 
     <h1 class="home-title">{% t homepage.about %}</h1>
 
-    {% tf short_about.html %}
+    <h3>{% tf short_about.html %}</h3>
 
   </div>
 
@@ -49,7 +48,7 @@ image_sliders: home_slider
         {%- for post in recent_news -%}
         <li>
           <h3>
-            <span class="post-meta">{% t global.published_at %} {{ post.date | date: date_format }}</span>
+            <span class="post-meta">{% t global.published_at %}: {{ post.date | date: date_format }}</span>
             <a class="post-link" href="{{ post.url | relative_url }}">
               {{ post.title | escape }}
             </a>

@@ -33,6 +33,8 @@ $gray-color-a8: rgba($gray-color, .8);
 
 $gray-color-light: lighten($gray-color, 40%) !default;
 
+$green-color-dark: darken($green-color, 15%) !default;
+
 $background-color: lighten($gray-color, 10%) !default;
 
 

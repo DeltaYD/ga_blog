@@ -14,7 +14,7 @@
   <script src="{{ "/assets/js/slider/iis-captions.js" | relative_url }}"></script>
   <script>
   {% for selector in iis_slider_array -%}
-    {%- assign slider = site.data.sliders | where:"selector",selector | first -%}
+    {%- assign slider = site.data.sliders | where:"selector", selector | first -%}
     {%- assign settings = slider.settings -%}
     var {{ slider.selector }} = new IdealImageSlider.Slider({
       selector: '#{{ slider.selector }}',

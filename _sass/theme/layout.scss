@@ -563,3 +563,19 @@
     letter-spacing: -1px;
   }
 }
+
+
+
+/**
+ * Icons.
+ */
+.links {
+  text-align: center;
+}
+
+a svg {
+  fill: $orange-color;
+  &:hover{
+    fill: $green-color-dark;
+  }
+}

@@ -6,13 +6,11 @@ title: global.people
 <div class="home">
   <h1 class="page-heading">{% t page.title %}</h1>
 
-
   {% if site.paginate %}
     {% assign people = paginator.people | where: "locale", site.lang | sort: current %}
   {% else %}
     {% assign people = site.people | where: "locale", site.lang | sort: current %}
   {% endif %}
-
 
   {%- if people.size > 0 -%}
 
@@ -33,7 +31,6 @@ title: global.people
         {%- endfor -%}
       </div>
     </div>
-
 
     {% if site.paginate %}
       <div class="pager">

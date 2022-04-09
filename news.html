@@ -21,7 +21,7 @@ title: global.news
     <ul class="post-list">
       {%- for post in posts -%}
       <li>
-        <span class="post-meta">Publicado em: {{ post.date | date: date_format }}</span>
+        <span class="post-meta">{% t global.published_at %}: {{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}

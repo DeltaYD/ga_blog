@@ -6,13 +6,11 @@ title: global.projects
 <div class="home">
   <h1 class="page-heading">{% t page.title %}</h1>
 
-
   {% if site.paginate %}
     {% assign projects = paginator.projects | where: "locale", site.lang | sort: order | reverse %}
   {% else %}
     {% assign projects = site.projects | where: "locale", site.lang | sort: order | reverse %}
   {% endif %}
-
 
   {%- if projects.size > 0 -%}
 

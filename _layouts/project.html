@@ -40,9 +40,9 @@ layout: default
       {% include data_format.html %}
 
       {% if site.paginate %}
-        {% assign publications = (((paginator.publications | where:"team",page.team) | sort: date) | reverse) %}
+        {% assign publications = (((paginator.publications | where:"team", page.team) | sort: date) | reverse) %}
       {% else %}
-        {% assign publications = (((site.publications | where:"team",page.team) | sort: date) | reverse) %}
+        {% assign publications = (((site.publications | where:"team", page.team) | sort: date) | reverse) %}
       {% endif %}
 
       {%- if publications.size > 0 -%}
