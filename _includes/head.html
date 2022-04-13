@@ -37,3 +37,7 @@
 {% include slider_styles.html %}
 
 <link rel="stylesheet" href="{{ site.baseurl_root }}/assets/css/core.css" type="text/css">
+
+{% if site.mathjax %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{% endif %}
