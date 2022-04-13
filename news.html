@@ -6,11 +6,7 @@ title: global.news
 <div class="home">
   <h1 class="page-heading">{% t page.title %}</h1>
 
-  {% if site.paginate %}
-    {% assign posts = paginator.news | where: "locale", site.lang | sort: date | reverse %}
-  {% else %}
-    {% assign posts = site.news | where: "locale", site.lang | sort: date | reverse %}
-  {% endif %}
+  {% assign posts = site.news | where: "locale", site.lang | sort: date | reverse %}
 
   {% include data_format.html %}
 
@@ -21,7 +17,11 @@ title: global.news
     <ul class="post-list">
       {%- for post in posts -%}
       <li>
-        <span class="post-meta">{% t global.published_at %}: {{ post.date | date: date_format }}</span>
+        {% if post.mdate %}
+          <span class="post-meta">{% t global.last_updated_at %}: {{ post.mdate | date: date_format }}</span>
+        {% else %}
+          <span class="post-meta">{% t global.published_at %}: {{ post.date | date: date_format }}</span>
+        {% endif %}
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
@@ -30,25 +30,6 @@ title: global.news
       </li>
       {%- endfor -%}
     </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
-
   {%- endif -%}
 
 </div>

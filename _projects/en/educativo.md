@@ -3,7 +3,6 @@ layout: project
 order: 2
 title: Educational Games
 date: 2019-01-31
-mdate: 2022-03-25
 categories: educação
 image: /assets/img/projects/placeholder-music.png
 image_preview: /assets/img/projects/placeholder-music-preview.png

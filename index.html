@@ -48,7 +48,11 @@ image_sliders: home_slider
         {%- for post in recent_news -%}
         <li>
           <h3>
-            <span class="post-meta">{% t global.published_at %}: {{ post.date | date: date_format }}</span>
+            {% if post.mdate %}
+              <span class="post-meta">{% t global.last_updated_at %}: {{ post.mdate | date: date_format }}</span>
+            {% else %}
+              <span class="post-meta">{% t global.published_at %}: {{ post.date | date: date_format }}</span>
+            {% endif %}
             <a class="post-link" href="{{ post.url | relative_url }}">
               {{ post.title | escape }}
             </a>

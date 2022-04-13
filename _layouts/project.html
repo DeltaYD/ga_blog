@@ -4,12 +4,20 @@ layout: default
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
+  {% include data_format.html %}
+
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <h1 class="post-title p-name" itemprop="name headline">
+      {{ page.title | escape }}
+      {% if page.mdate %}
+        <span class="post-meta">{% t global.last_updated_at %}: {{ page.mdate | date: date_format }}</span>
+      {% else %}
+        <span class="post-meta">{% t global.published_at %}: {{ page.date | date: date_format }}</span>
+      {% endif %}
+    </h1>
 
   </header>
-
 
   <div class="post-content e-content" itemprop="articleBody">
 
@@ -37,13 +45,7 @@ layout: default
 
     {%- if page.team -%}
 
-      {% include data_format.html %}
-
-      {% if site.paginate %}
-        {% assign publications = (((paginator.publications | where:"team", page.team) | sort: date) | reverse) %}
-      {% else %}
-        {% assign publications = (((site.publications | where:"team", page.team) | sort: date) | reverse) %}
-      {% endif %}
+      {% assign publications = site.publications | where:"team", page.team | sort: date | reverse %}
 
       {%- if publications.size > 0 -%}
         <div class="post-section">
@@ -65,6 +67,18 @@ layout: default
                     <div>
                       <span class="publication-meta">{{ publication.date | date: date_format }} • {{ publication.author }}</span>
                       <p class="publication-title">{{ publication.title | escape }}</p>
+                      <p class="keyword-list">
+                        {% t global.keywords %}:
+                        <span>
+                          {%- for keyword in publication.keywords -%}
+                            {% if forloop.last %}
+                              {{ keyword }}
+                            {% else %}
+                              {{ keyword }},
+                            {% endif %}
+                          {% endfor %}
+                        </span>
+                      </p>
 
                       <a class="text-button" onclick="show('hidden-abstract{{forloop.index}}')">Abstract</a> •
                       {% if publication.bibtex %}

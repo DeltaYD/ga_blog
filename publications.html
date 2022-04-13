@@ -6,11 +6,7 @@ title: global.publications
 <div class="home">
   <h1 class="page-heading">{% t page.title %}</h1>
 
-  {% if site.paginate %}
-    {% assign publications = paginator.publications | sort: date | reverse %}
-  {% else %}
-    {% assign publications = site.publications | sort: date | reverse %}
-  {% endif %}
+  {% assign publications = site.publications | sort: date | reverse %}
 
   {% include data_format.html %}
 
@@ -37,6 +33,18 @@ title: global.publications
           <div>
             <span class="publication-meta">{{ publication.date | date: date_format }} • {{ publication.author }}</span>
             <p class="publication-title">{{ publication.title | escape }}</p>
+            <p class="keyword-list">
+              {% t global.keywords %}:
+              <span>
+                {%- for keyword in publication.keywords -%}
+                  {% if forloop.last %}
+                    {{ keyword }}
+                  {% else %}
+                    {{ keyword }},
+                  {% endif %}
+                {% endfor %}
+              </span>
+            </p>
 
             <a class="text-button" onclick="show('hidden-abstract{{forloop.index}}')">Abstract</a> •
             {% if publication.bibtex %}
@@ -76,25 +84,6 @@ title: global.publications
         </li>
       </ul>
     {%- endfor -%}
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
-
   {%- endif -%}
 
 </div>

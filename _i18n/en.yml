@@ -19,7 +19,9 @@ global:
   host: Host on GitHub Pages with Jekyll
   # Remaining
   published_at: Published at
+  last_updated_at: Last updated at
   abstract: Abstract
+  keywords: Keywords
 
 # Homepage
 homepage:

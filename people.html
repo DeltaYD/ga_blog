@@ -6,18 +6,12 @@ title: global.people
 <div class="home">
   <h1 class="page-heading">{% t page.title %}</h1>
 
-  {% if site.paginate %}
-    {% assign people = paginator.people | where: "locale", site.lang | sort: current %}
-  {% else %}
-    {% assign people = site.people | where: "locale", site.lang | sort: current %}
-  {% endif %}
+  {% assign people = site.people | where: "locale", site.lang | sort: current %}
 
   {%- if people.size > 0 -%}
-
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-
     <div class="post-section">
       <div class="post-section-content team">
         {%- for person in people -%}
@@ -31,25 +25,6 @@ title: global.people
         {%- endfor -%}
       </div>
     </div>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
-
   {%- endif -%}
 
 </div>

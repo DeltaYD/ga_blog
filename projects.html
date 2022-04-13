@@ -6,21 +6,16 @@ title: global.projects
 <div class="home">
   <h1 class="page-heading">{% t page.title %}</h1>
 
-  {% if site.paginate %}
-    {% assign projects = paginator.projects | where: "locale", site.lang | sort: order | reverse %}
-  {% else %}
-    {% assign projects = site.projects | where: "locale", site.lang | sort: order | reverse %}
-  {% endif %}
+  {% assign projects = site.projects | where: "locale", site.lang | sort: order | reverse %}
+
+  {% include data_format.html %}
 
   {%- if projects.size > 0 -%}
-
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-
     <ul class="post-list">
       {%- for project in projects -%}
-
         <li>
           <h3>
             <a class="post-link" href="{{ project.url | relative_url }}">
@@ -30,37 +25,21 @@ title: global.projects
               {{ project.title | escape }}
             </a> •
             <a class="text-button" onclick="show('hidden-abstract{{forloop.index}}')">{% t projects.abstract %}</a>
+            {% if project.mdate %}
+              <span class="post-meta">{% t global.last_updated_at %}: {{ project.mdate | date: date_format }}</span>
+            {% else %}
+              <span class="post-meta">{% t global.published_at %}: {{ project.date | date: date_format }}</span>
+            {% endif %}
           </h3>
         </li>
-
         {% if project.abstract %}
           <div class="project-abstract" id="hidden-abstract{{forloop.index}}" style="display: none;">
             <h4>{% t projects.abstract %}</h4>
             {{ project.abstract }}
           </div>
         {% endif %}
-
       {%- endfor -%}
     </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
-
   {%- endif -%}
 
 </div>
