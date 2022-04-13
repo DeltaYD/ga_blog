@@ -1,8 +1,0 @@
----
-layout: news # Não mudar
-title: Título da notícia
-date: 2021-12-31 # Data de publicação (ano-mês-dia)
-mdate: 2021-12-31 # Data de última edição, se houver (ano-mês-dia)
----
-
-Texto no formato Markdown (https://www.markdownguide.org/getting-started).

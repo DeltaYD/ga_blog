@@ -139,7 +139,7 @@ code {
   @include relative-font-size(0.9375);
   border: 1px solid $gray-color;
   border-radius: 3px;
-  background-color: #eef;
+  background-color: $code-bg-color;
 }
 
 code {
@@ -149,6 +149,7 @@ code {
 pre {
   padding: 8px 12px;
   overflow-x: auto;
+  background-color: $code-bg-color;
 
   > code {
     border: 0;
